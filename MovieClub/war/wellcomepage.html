@@ -1,0 +1,333 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US" dir="ltr">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<style type="text/css">
+		* {
+			font-size: 11px;
+			font-weight: normal;  
+		}
+		
+		#container {
+
+		}
+		
+		.h1{
+			font-size: 11px;
+			font-weight: bold;  
+		}
+
+		.h2{
+			font-size: 11px;
+			font-weight: normal;  
+		}
+		
+		#header h1{
+			font-size: 15px;
+			font-weight: bold;  
+		}
+
+		#tech {
+			font-size: 11px;
+			color: #DC2F41;
+			margin-top: 20px;
+			margin-bottom: 11px;
+		}
+		
+		#tech h1{
+			font-size: 11px;
+			font-weight: bold;  
+			color: #000000;
+		}
+
+		#content {
+			font-size: 11px;
+			color: #DC2F41;
+			margin-top: 20px;
+			margin-bottom: 11px;
+		}
+		
+		#content h1{
+			font-size: 11px;
+			font-weight: bold;  
+			color: #000000;
+		}
+		
+		#content h2{
+			font-size: 11px;
+			font-weight: normal;  
+			color: #DC2F41;
+		}
+		
+		#item {
+			margin-top : 11px;
+			margin-bottom : 11px;
+		}
+		
+		#image {
+			float : left; 
+			width : 24px;
+			height : 24px;
+		}
+		
+		#caption {
+			font-size: 11px;
+			font-weight: normal;  
+			color: #DC2F41;
+		}
+
+		#details {
+			font-size: 11px;
+			font-weight: normal;  
+			color: #000000;
+			float : none;
+		}
+
+		#footer {
+			text-align: center;
+			margin-top: 20px;
+		}
+
+		#footer small {
+			font-size: 100%;
+			color: #000000;
+			text-align: center;
+			margin-top: 11px;
+		}
+  
+	</style>
+</head>
+<body>
+	<div id="container">
+		<div id="header">
+			<h1>MovieClub projesine hosgeldiniz!</h1>
+			
+			<strong>GMVC ve MovieClub Projesi</strong> acik kaynak teknolojiler kullanilarak Java' da gelistirilmistir.
+			<br />
+			<ul>
+				<li>Bu projenin amaci, GMVC (GWT uzerine MVC) catisini gerceklemektir.</li>
+				<li>GMVC catisi icerisinde GWT ve GXT ile ilgili karsilasilan bircok sikintinin cozumunu bulabilirsiniz.</li> 
+				<li>GMVC Catisi LGPLV3 ile lisanslanmistir.</li>
+				<li>MovieClub Projesi GPLV3 ile lisanslanmistir.</li>
+			</ul>
+			
+		</div>
+		<div id="tech">
+			<h1>Projede kullanilan teknolojiler :<h1/>
+			<table>
+				<tr>
+					<td style="width: 350px;">
+						Google Web Toolkit	
+					</td>
+					<td>
+						http://code.google.com
+					</td>
+				</tr>
+				<tr>
+					<td>
+						Ext Gwt Components
+					</td>
+					<td>
+						http://sencha.com/products/gwt
+					</td>
+				</tr>
+				<tr>
+					<td>
+						Hibernate Relational Percistance for Java
+					</td>
+					<td>
+						http://hibernate.org
+					</td>
+				</tr>
+				<tr>
+					<td>
+						Dozer Java Bean mapper
+					</td>
+					<td>
+						http://dozer.sourceforge.net
+					</td>
+				</tr>
+				<tr>
+					<td>
+						Jasper Report
+					</td>
+					<td>
+						http://jasperforge.org/projects/jasperreports
+					</td>
+				</tr>
+				<tr>
+					<td>
+						Tomcat Web Server
+					</td>
+					<td>
+						http://tomcat.apache.org
+					</td>
+				</tr>
+				<tr>
+					<td>
+						MySQL Database 5.1
+					</td>
+					<td>
+						http://mysql.com
+					</td>
+				</tr>
+				<tr>
+					<td>
+						HyperSQL Database 2.0
+					</td>
+					<td>
+						http://hsqldb.org/
+					</td>
+				</tr>
+				<tr>
+					<td>
+						Apache log4j
+					</td>
+					<td>
+						http://logging.apache.org/log4j/
+					</td>
+				</tr>
+			</table>	
+		</div>
+		<div id="content">
+			<h1>Projenin icerisinde bulabilecekleriniz:</h1>
+			
+			<div id="item">
+				<div id="image">
+					<img src="images/system/tick.png" style="width:100%;height:100%" />
+				</div>
+				
+				<div id="caption">
+					Hibernate implementasyonu
+				</div>
+				
+				<div id="details">
+					Dozer API kullanilarak model siniflar DTO (data transfer object) siniflara cevriliyor.				
+				</div>
+			</div>
+			<div id="item">
+				<div id="image">
+					<img src="images/system/tick.png" style="width:100%;height:100%" />
+				</div>
+				
+				<div id="caption">
+					Login formu ve kullanici hak denetimlerinin yapilmasi
+				</div>
+				
+				<div id="details">
+					Asenkron cagri sonucunun senkron olarak beklenmesi durumu encok Login formlarinda yasanan sikintidir.
+					Ayrica kullanici hak denetimlerinin nasil yapildigina dair ornek bulabileceksiniz.
+				</div>
+			</div>
+			<div id="item">
+				<div id="image">
+					<img src="images/system/tick.png" style="width:100%;height:100%" />
+				</div>
+				
+				<div id="caption">
+					Remote Procedure Call ile SuggestionBox bileseni
+				</div>
+				
+				<div id="details">
+					GWT ve Ext-Gwt bilesenleri icerisinde bulunan SuggestionBox bileseni 
+					static data üzerinde calisiyor, burda ise RPC yolu ile dinamik 
+					data üzerinde calisan ornegi bulabilirsiniz.					
+				</div>
+			</div>
+			<div id="item">
+				<div id="image">
+					<img src="images/system/tick.png" style="width:100%;height:100%" />
+				</div>
+				
+				<div id="caption">
+					MVC catisi ve cok katmanli programlama
+				</div>
+				
+				<div id="details">
+					MovieClub Projesinin üzerine bina edildiği temel paterndir. Zaten bu projenin amaci, 
+					GMVC modulunun gerceklestirimini yapmaktir. Formlarin ve servislerin kalitim yolu ile edilmesi ve
+					data, kontrol ve gorunumun ayri ayri katmanlarda ele alinmasi ile cok katmanli programlama orneklenmistir.
+				</div>
+			</div>
+			<div id="item">
+				<div id="image">
+					<img src="images/system/tick.png" style="width:100%;height:100%" />
+				</div>
+
+				<div id="caption">
+					Jasper Report kullanimi
+				</div>
+				
+				<div id="details">
+					Raporlama araci olarak JasperReport tercih edildi, tasarimlar icin de iReport 
+					kullanildi. Raporlarin farkli formatlara dokumunun orneklerini bulabilirsiniz. <strong>Html, PDF, CVS, Excel gibi.</strong>				
+				</div>
+			</div>
+			<div id="item">
+				<div id="image">
+					<img src="images/system/tick.png" style="width:100%;height:100%" />
+				</div>
+
+				<div id="caption">
+					GWT de Modul yazimi/kullaniminin ornegi
+				</div>
+				
+				<div id="details">
+					GMVC ayri bir moduldur, bu ornek ile kendi bagimsiz modullerinizi gelistirebilirsiniz.
+				</div>
+			</div>
+			<div id="item">
+				<div id="image">
+					<img src="images/system/tick.png" style="width:100%;height:100%" />
+				</div>
+
+				<div id="caption">
+					RPC servislerin kalitimmla elde edilebilmesi
+				</div>
+				
+				<div id="details">
+					CRUD (Create-Read-Update-Delete) servisleri kalitim yolu ile elde ediliyor.
+				</div>
+			</div>
+			<div id="item">
+				<div id="image">
+					<img src="images/system/tick.png" style="width:100%;height:100%" />
+				</div>
+
+				<div id="caption">
+					Olay temelli haberlesme
+				</div>
+				
+				<div id="details">
+					Siniflarin bagimliliklarini en aza indirmek icin, MVC siniflari ve 
+					aplikasyon idaresinden sorumlu siniflar olay temelli haberlesiyorlar.
+				</div>
+			</div>
+			<div id="item">
+				<div id="image">
+					<img src="images/system/tick.png" style="width:100%;height:100%" />
+				</div>
+
+				<div id="caption">
+					Projenin Ant Script ile WAR dosyasinin hazirlanmasi
+				</div>
+				<div id="details">
+					Uygulamanin sunucu uzerinde deploy edilebilmesi icin gereken WAR dosyasini hazirlayan ant scriptini iceriyor.
+				</div>
+			</div>
+		</div>
+
+		<div id="footer">
+			<small>
+				Mustafa Dumlupinar - 2010 <br />
+				<br />
+				
+				Mail : dumlupinar01@gmail.com <br />
+				Blog : http://mdpinar.blogspot.com
+			</small>
+		</div>
+	</div>
+</body>
+</html>
+

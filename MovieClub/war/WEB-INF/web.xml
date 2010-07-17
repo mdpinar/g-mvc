@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE web-app
+    PUBLIC "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+    "http://java.sun.com/dtd/web-app_2_3.dtd">
+
+<web-app>
+  
+	<!-- Action servlets -->
+	<servlet>
+		<servlet-name>givenMovieService</servlet-name>
+		<servlet-class>com.mclub.server.impl.GivenMovieServiceImpl</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>incomingMovieService</servlet-name>
+		<servlet-class>com.mclub.server.impl.IncomingMovieServiceImpl</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>changeStatusService</servlet-name>
+		<servlet-class>com.mclub.server.impl.ChangeStatusServiceImpl</servlet-class>
+	</servlet>
+	
+	<!-- Info servlets -->
+	<servlet>
+		<servlet-name>customerService</servlet-name>
+		<servlet-class>com.mclub.server.impl.CustomerServiceImpl</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>jobService</servlet-name>
+		<servlet-class>com.mclub.server.impl.JobServiceImpl</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>locationService</servlet-name>
+		<servlet-class>com.mclub.server.impl.LocationServiceImpl</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>movieGroupService</servlet-name>
+		<servlet-class>com.mclub.server.impl.MovieGroupServiceImpl</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>movieInfoService</servlet-name>
+		<servlet-class>com.mclub.server.impl.MovieInfoServiceImpl</servlet-class>
+	</servlet>
+	
+	<!-- System servlets -->
+	<servlet>
+		<servlet-name>systemService</servlet-name>
+		<servlet-class>com.mclub.server.impl.SystemServiceImpl</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>userService</servlet-name>
+		<servlet-class>com.mclub.server.impl.UserServiceImpl</servlet-class>
+	</servlet>
+
+	<!-- Report servlets -->
+	<servlet>
+		<servlet-name>reportService</servlet-name>
+		<servlet-class>com.gmvc.server.servlet.ReportService</servlet-class>
+	</servlet>
+
+
+
+	<!-- Action servlets mapping -->
+	<servlet-mapping>
+		<servlet-name>givenMovieService</servlet-name>
+		<url-pattern>/com.mclub.MovieClub/givenMovieService</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>incomingMovieService</servlet-name>
+		<url-pattern>/com.mclub.MovieClub/incomingMovieService</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>changeStatusService</servlet-name>
+		<url-pattern>/com.mclub.MovieClub/changeStatusService</url-pattern>
+	</servlet-mapping>
+
+	<!-- Info servlets mapping -->
+	<servlet-mapping>
+		<servlet-name>customerService</servlet-name>
+		<url-pattern>/com.mclub.MovieClub/customerService</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>jobService</servlet-name>
+		<url-pattern>/com.mclub.MovieClub/jobService</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>locationService</servlet-name>
+		<url-pattern>/com.mclub.MovieClub/locationService</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>movieGroupService</servlet-name>
+		<url-pattern>/com.mclub.MovieClub/movieGroupService</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>movieInfoService</servlet-name>
+		<url-pattern>/com.mclub.MovieClub/movieInfoService</url-pattern>
+	</servlet-mapping>
+	
+	<!-- System servlets mapping -->
+	<servlet-mapping>
+		<servlet-name>systemService</servlet-name>
+		<url-pattern>/com.mclub.MovieClub/systemService</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>userService</servlet-name>
+		<url-pattern>/com.mclub.MovieClub/userService</url-pattern>
+	</servlet-mapping>
+
+	<!-- Report servlets mapping -->
+	<servlet-mapping>
+		<servlet-name>reportService</servlet-name>
+		<url-pattern>/com.gmvc.GMVC/reportService</url-pattern>
+	</servlet-mapping>
+	
+	<!-- Application listeners -->
+  	<listener>
+		<listener-class>com.mclub.server.servlet.AppContextListener</listener-class>
+	</listener>
+ 
+  	<!-- Default page to serve -->
+  	<welcome-file-list>
+    	<welcome-file>MovieClub.html</welcome-file>
+  	</welcome-file-list>
+
+</web-app>

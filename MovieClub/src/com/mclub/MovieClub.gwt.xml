@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE module PUBLIC "-//Google Inc.//DTD Google Web Toolkit 1.7.0//EN" "http://google-web-toolkit.googlecode.com/svn/tags/1.7.0/distro-source/core/src/gwt-module.dtd">
+<module>
+	<inherits name='com.extjs.gxt.ui.GXT' />
+	<inherits name="com.google.gwt.i18n.I18N" />
+	<inherits name="com.gmvc.GMVC" />
+
+	<inherits name='com.google.gwt.user.theme.standard.Standard' />
+	<!-- <inherits name='com.google.gwt.user.theme.chrome.Chrome'/> -->
+	<!-- <inherits name='com.google.gwt.user.theme.dark.Dark'/>     -->
+
+	<!-- Additional source path -->
+	<source path='client' />
+
+	<entry-point class="com.mclub.client.MovieClub" />
+	
+	<extend-property  name="locale" values="tr" />
+	<extend-property  name="locale" values="en" />
+
+	<stylesheet src="../resource/css/gxt-all.css" />
+	<stylesheet src="../resource/css/resources.css" />
+</module>

@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<project name="movieclub" default="build" basedir=".">
+	
+	<!-- Properties -->
+	<property name="gwt.args" value="" />
+	<property name="gwt.sdk" location="/home/mdpinar/gwt-2.0.3" />
+	<property name="war.file" value="${ant.project.name}.war" />
+	<property name="entry.point" value="com.mclub.MovieClub" />
+	<property name="wellcome.page" value="login.html" />
+	<property name="lib.dir" location="war/WEB-INF/lib" />
+	<property name="classes.dir" location="war/WEB-INF/classes" />
+	<property name="locale.deploy.dir" value="/home/mdpinar/tomcat-5.5/webapps" />
+
+	<path id="project.class.path">
+		<pathelement location="${classes.dir}" />
+		<pathelement location="${gwt.sdk}/gwt-user.jar" />
+		<fileset dir="${gwt.sdk}" includes="gwt-dev*.jar" />
+		<!-- Add any additional non-server libs (such as JUnit) -->
+		<fileset dir="${lib.dir}" includes="**/*.jar" />
+	</path>
+
+	<target name="libs" description="Copy libs to lib.dir">
+		<mkdir dir="${lib.dir}" />
+		<copy todir="${lib.dir}" file="${gwt.sdk}/gwt-servlet.jar" />
+	</target>
+
+	<target name="javac" depends="libs" description="Compile java source">
+		<mkdir dir="${classes.dir}" />
+		<javac srcdir="src" includes="**" encoding="utf-8" destdir="${classes.dir}" 
+		 source="${ant.java.version}" target="${ant.java.version}" nowarn="true" debug="true" debuglevel="lines,vars,source">
+			<classpath refid="project.class.path" />
+		</javac>
+		<copy todir="${classes.dir}">
+			<fileset dir="src" excludes="**/*.java" />
+		</copy>
+	</target>
+
+	<target name="gwtc" depends="javac" description="GWT compile to JavaScript">
+		<java failonerror="true" fork="true" classname="com.google.gwt.dev.Compiler">
+			<classpath>
+				<pathelement location="src" />
+				<path refid="project.class.path" />
+			</classpath>
+			<!-- add jvmarg -Xss16M or similar if you see a StackOverflowError -->
+			<jvmarg value="-Xmx512M" />
+			<!-- Additional arguments like -style PRETTY or -logLevel DEBUG -->
+			<arg line="${gwt.args}" />
+			<arg value="${entry.point}" />
+		</java>
+	</target>
+
+	<target name="devmode" depends="javac" description="Run development mode">
+		<java failonerror="true" fork="true" classname="com.google.gwt.dev.DevMode">
+			<classpath>
+				<pathelement location="src" />
+				<path refid="project.class.path" />
+			</classpath>
+			<jvmarg value="-Xmx512M" />
+			<arg value="-startupUrl" />
+			<arg value="${wellcome.page}" />
+			<!-- Additional arguments like -style PRETTY or -logLevel DEBUG -->
+			<arg line="${gwt.args}" />
+			<arg value="${entry.point}" />
+		</java>
+	</target>
+
+	<target name="eclipse.generate" depends="libs" description="Generate eclipse project">
+		<java failonerror="true" fork="true" classname="com.google.gwt.user.tools.WebAppCreator">
+			<classpath>
+				<path refid="project.class.path" />
+			</classpath>
+			<arg value="-XonlyEclipse" />
+			<arg value="-ignore" />
+			<arg value="${entry.point}" />
+		</java>
+	</target>
+
+	<target name="build" depends="gwtc" description="Build this project" />
+
+	<target name="build.war" depends="build" description="Create a war file">
+		<zip destfile="deploy/${war.file}" basedir="war" />
+	</target>
+
+	<target name="deploy.war" depends="clean, build.war" description="Copy war file to locale.deploy.dir">
+		<copy todir="${locale.deploy.dir}" file="deploy/${war.file}" />
+	</target>
+
+	<target name="clean" description="Cleans this project">
+		<delete dir="${classes.dir}" failonerror="false" />
+		<delete dir="deploy/${war.file}" failonerror="true" />
+		<delete dir="${locale.deploy.dir}/${ant.project.name}" failonerror="false" />
+		<delete dir="war/${ant.project.name}" failonerror="true" />
+		<delete file="${locale.deploy.dir}/${war.file}" failonerror="true" />
+	</target>
+
+</project>
